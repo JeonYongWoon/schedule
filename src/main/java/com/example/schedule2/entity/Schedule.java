@@ -24,7 +24,7 @@ public class Schedule {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Schedule(String title, String content, String author, String password) {
+    public Schedule(String title) {
         this.title = title;
         this.content = content;
         this.author = author;
