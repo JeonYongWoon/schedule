@@ -14,13 +14,10 @@ public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
 
-
+    @Transactional
     public CreateScheduleResponse save(CreateScheduleRequest request) {
-        Schedule schedule = new Schedule(request.getContents());
+        Schedule schedule = new Schedule(request.getTitle(),request.getContents(),request.getAuthor(),request.getPassword());
         Schedule savedSchedule = scheduleRepository.save(schedule);
-        return new CreateScheduleResponse(
-                savedSchedule.getId(),
-                savedSchedule.getContent()
-        );
+        return new CreateScheduleResponse(savedSchedule);
     }
 }

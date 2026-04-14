@@ -18,6 +18,6 @@ public class ScheduleController {
 
     @PostMapping("/schedules")
     public ResponseEntity<CreateScheduleResponse> createSchedule(@RequestBody CreateScheduleRequest request){
-        return ResponseEntity.status(HttpStatus.CREATED).body(ScheduleService.save(request));
+        return ResponseEntity.status(HttpStatus.CREATED).body(scheduleService.save(request));
     }
 }
